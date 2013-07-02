@@ -37,7 +37,7 @@ $.localize = (pkg, options = {}) ->
           jsonCall(file, pkg, lang, level)
       when 3
         if lang.length >= 5
-          file = "#{pkg}-#{lang.substring(0, 5)}.#{fileExtension}"
+          file = "#{pkg}-#{lang}.#{fileExtension}"
           jsonCall(file, pkg, lang, level)
 
   jsonCall = (file, pkg, lang, level) ->
