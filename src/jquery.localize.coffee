@@ -7,11 +7,13 @@
 
 $ = jQuery
 
-# Ensures language code is in the format aa-AA.
+# Ensures language code is in the format aa-AA, or if longer,
+# keep capitalization (zh-Hans) of second part.
 normaliseLang = (lang) ->
   lang = lang.replace(/_/, '-').toLowerCase()
-  if lang.length > 3
-    lang = lang.substring(0, 3) + lang.substring(3).toUpperCase()
+  lang = lang.substring(0, 2).toLowerCase() + lang.substring(2)
+  if lang.length == 5
+    lang = lang.substring(0, 3).toLowerCase() + lang.substring(3)
   lang
 
 # Mozilla uses .language, IE uses .userLanguage
